@@ -1,26 +1,63 @@
 package it.polito.tdp.PremierLeague.model;
 
+import java.util.LinkedList;
+import java.util.List;
+
 public class Player {
-	Integer playerID;
-	String name;
+	Integer playerID ;
+	String name ;
+	Integer battuti ;
+	double pesoSconfitti ;
+	Integer pesoTitolarita;
+	List<Player> sconfitti ;
 	
 	public Player(Integer playerID, String name) {
 		super();
-		this.playerID = playerID;
-		this.name = name;
+		this.playerID = playerID ;
+		this.name = name ;
+		this.battuti = 0 ;
+		pesoSconfitti = 0;
+		pesoTitolarita = 0;
+		sconfitti = new LinkedList<>() ;
 	}
 	
+	public List<Player> getSconfitti() {
+		return sconfitti;
+	}
+	public void setSconfitti(Player sconfitti) {
+		this.sconfitti.add(sconfitti) ;
+	}
 	public Integer getPlayerID() {
 		return playerID;
-	}
-	public void setPlayerID(Integer playerID) {
-		this.playerID = playerID;
 	}
 	public String getName() {
 		return name;
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+	public Integer getBattuti() {
+		return battuti;
+	}
+
+	public void setBattuti(Integer battuti) {
+		this.battuti = battuti;
+	}
+
+	public double getPesoSconfitti() {
+		return pesoSconfitti;
+	}
+
+	public void setPesoSconfitti(double pesoSconfitti) {
+		this.pesoSconfitti = pesoSconfitti;
+	}
+
+	public Integer getPesoTitolarita() {
+		return pesoTitolarita;
+	}
+
+	public void setPesoTitolarita(Integer pesoTitolarita) {
+		this.pesoTitolarita = pesoTitolarita;
 	}
 
 	@Override
@@ -50,9 +87,7 @@ public class Player {
 
 	@Override
 	public String toString() {
-		return playerID + " - " + name;
+		return playerID + " - " + name + " - " + pesoTitolarita;
 	}
-	
-	
 	
 }
